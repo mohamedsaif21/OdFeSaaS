@@ -400,7 +400,7 @@ export default function PosMockup() {
         </div>
 
         <div className="pos-chrome__center">
-          <span className="pos-chrome__loc">Indiranagar Flagship · Counter 1</span>
+          <span className="pos-chrome__loc">Anna Nagar Flagship</span>
           <span className="pos-chrome__sep">·</span>
           <span className="pos-chrome__table-badge">Table 12 · Dine-in</span>
         </div>

@@ -58,7 +58,7 @@ export default function PosShowcase() {
         <div className="pos-header">
           <div className="pos-eyebrow">
             <span className="pos-eyebrow__dot" />
-            <span>POS · BUILT FOR SPEED</span>
+            <span>POINT OF SALE</span>
           </div>
 
           <h2 className="pos-title">
