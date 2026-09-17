@@ -128,18 +128,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: #fbf9f4;
-  border: 1px solid var(--line);
-  padding: 3px;
-  box-shadow: 0 2px 5px rgba(16, 31, 25, 0.04);
 }
 
 .brand__logo {
-  width: 30px;
-  height: auto;
+  height: 32px;
+  width: auto;
   object-fit: contain;
 }
 
@@ -2179,5 +2172,627 @@ h1 {
 @media (max-width: 520px) {
   .pos-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   KITCHEN SHOWCASE SECTION
+   ========================================================================== */
+.kitchen-section {
+  position: relative;
+  padding: clamp(90px, 12vh, 150px) 20px clamp(110px, 14vh, 170px);
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--paper);
+  border-top: 1px solid var(--line-soft);
+}
+
+.kitchen-wash {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 40% at 50% 35%, rgba(20, 80, 62, 0.07), transparent 70%),
+    radial-gradient(75% 50% at 25% 70%, rgba(201, 138, 46, 0.06), transparent 75%),
+    linear-gradient(180deg, var(--paper) 0%, var(--haze) 50%, var(--paper) 100%);
+}
+
+.kitchen-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Header */
+.kitchen-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 40px;
+}
+
+.kitchen-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--green-deep);
+  background: var(--brass-light);
+  border: 1px solid rgba(201, 138, 46, 0.3);
+  padding: 5px 14px;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(201, 138, 46, 0.08);
+  text-transform: uppercase;
+}
+
+.kitchen-eyebrow__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--brass);
+}
+
+.kitchen-title {
+  font-family: var(--display);
+  font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144;
+  font-weight: 600;
+  font-size: clamp(34px, 4.8vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  margin: 20px 0 0;
+}
+
+.kitchen-title__accent {
+  color: var(--green-deep);
+}
+
+.kitchen-sub {
+  margin: 18px auto 0;
+  max-width: 58ch;
+  color: var(--ink-soft);
+  font-size: clamp(15.5px, 1.4vw, 17.5px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Minimal POS -> Kitchen Visual Connector */
+.kitchen-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 44px;
+  max-width: 900px;
+  flex-wrap: wrap;
+}
+
+.kitchen-connector__node {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(16, 31, 25, 0.04);
+}
+
+.kitchen-connector__icon-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #f2f7f4;
+  border: 1px solid #ddeadf;
+  display: grid;
+  place-items: center;
+}
+
+.kitchen-connector__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.kitchen-connector__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.kitchen-connector__sub {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+}
+
+.kitchen-connector__line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  padding: 0 6px;
+}
+
+.kitchen-connector__pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(20, 80, 62, 0.15);
+}
+
+.kitchen-connector__tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--brass);
+  background: var(--brass-light);
+  border: 1px solid rgba(201, 138, 46, 0.25);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Kitchen Mockup Frame */
+.kitchen-mockup {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow:
+    0 24px 60px -16px rgba(16, 31, 25, 0.12),
+    0 6px 18px -6px rgba(16, 31, 25, 0.05),
+    0 0 0 1px rgba(16, 31, 25, 0.06);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+/* KDS Chrome Header */
+.kds-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 18px;
+  background: #faf8f4;
+  border-bottom: 1px solid var(--line-soft);
+  gap: 12px;
+}
+
+.kds-chrome__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.kds-chrome__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kds-chrome__icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--green-light);
+  display: grid;
+  place-items: center;
+}
+
+.kds-chrome__title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.kds-chrome__badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--brass);
+  background: var(--brass-light);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.kds-chrome__center {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #f4eee2;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.kds-station-tab {
+  border: 0;
+  background: transparent;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.kds-station-tab:hover {
+  color: var(--ink);
+}
+
+.kds-station-tab.is-active {
+  background: #ffffff;
+  color: var(--ink);
+  box-shadow: 0 1px 4px rgba(16, 31, 25, 0.08);
+  font-weight: 700;
+}
+
+.kds-chrome__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kds-chrome__loc {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-mid);
+}
+
+.kds-chrome__sync {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #e6f4ec;
+  color: #1b6c4b;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  transition: transform 0.2s ease;
+}
+
+.kds-chrome__sync.is-pulsing {
+  transform: scale(1.05);
+}
+
+/* 3 KDS Columns */
+.kds-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 18px;
+  background: #faf8f4;
+  min-height: 480px;
+}
+
+.kds-column {
+  background: #ffffff;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kds-col-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.kds-col-header__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kds-col-header__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.kds-col-header__dot--gold {
+  background: var(--brass);
+}
+
+.kds-col-header__dot--green {
+  background: #248a5b;
+}
+
+.kds-col-header__dot--ready {
+  background: var(--green-deep);
+}
+
+.kds-col-header__title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.kds-col-header__count {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--line-soft);
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+.kds-col-header__hint {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+}
+
+.kds-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+/* KDS Order Card */
+.kds-card {
+  background: #faf8f4;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.kds-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -4px rgba(16, 31, 25, 0.08);
+  background: #ffffff;
+  border-color: rgba(20, 80, 62, 0.3);
+}
+
+.kds-card.is-selected {
+  border-color: var(--green-deep);
+  box-shadow: 0 0 0 2px rgba(11, 64, 53, 0.15);
+}
+
+.kds-card--new {
+  border-left: 3.5px solid var(--brass);
+}
+
+.kds-card--prep {
+  border-left: 3.5px solid #248a5b;
+}
+
+.kds-card--ready {
+  border-left: 3.5px solid var(--green-deep);
+}
+
+.kds-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kds-card__no-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kds-card__no {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.kds-card__type {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: #ffffff;
+  border: 1px solid var(--line-soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.kds-card__timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.kds-card__timer--gold {
+  background: var(--brass-light);
+  color: #8a6410;
+}
+
+.kds-card__timer--green {
+  background: #e6f4ec;
+  color: #1b6c4b;
+}
+
+.kds-card__status-pill {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--green-deep);
+  background: #e6f4ec;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.kds-card__items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 0;
+  border-top: 1px dashed var(--line-soft);
+  border-bottom: 1px dashed var(--line-soft);
+}
+
+.kds-card__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+}
+
+.kds-card__item-qty {
+  font-weight: 800;
+  color: var(--green-deep);
+  min-width: 20px;
+}
+
+.kds-card__item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.kds-card__item-name {
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.kds-card__item-note {
+  font-size: 10.5px;
+  color: #8a6410;
+  background: var(--brass-light);
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-top: 2px;
+  width: fit-content;
+}
+
+.kds-card__footer {
+  margin-top: 2px;
+}
+
+.kds-action-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kds-action-btn--prep {
+  background: var(--brass-light);
+  color: #8a6410;
+  border: 1px solid rgba(201, 138, 46, 0.3);
+}
+
+.kds-action-btn--prep:hover {
+  background: var(--brass);
+  color: #ffffff;
+}
+
+.kds-action-btn--ready {
+  background: #e6f4ec;
+  color: #1b6c4b;
+  border: 1px solid #cce7d9;
+}
+
+.kds-action-btn--ready:hover {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.kds-served-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1b6c4b;
+}
+
+.kds-empty-col {
+  text-align: center;
+  padding: 30px 10px;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.kds-empty-col p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.kds-empty-col span {
+  font-size: 10.5px;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Secondary Explanation Below Mockup */
+.kitchen-footer-copy {
+  text-align: center;
+  max-width: 680px;
+  margin: 52px auto 0;
+}
+
+.kitchen-footer-title {
+  font-family: var(--display);
+  font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144;
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.kitchen-footer-desc {
+  font-size: clamp(14.5px, 1.3vw, 16.5px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 12px 0 0;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   KITCHEN SHOWCASE RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .kds-columns {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 840px) {
+  .kds-columns {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .kitchen-connector {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .kitchen-connector__line {
+    transform: rotate(90deg);
+    margin: 4px 0;
+  }
+  .kds-chrome__center {
+    display: none;
   }
 }
