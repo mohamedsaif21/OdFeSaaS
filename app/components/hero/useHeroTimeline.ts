@@ -23,8 +23,6 @@ export function useHeroTimeline(root: RefObject<HTMLElement | null>) {
             ".actions",
             ".hero__perks",
             "#dashWrap",
-            "#floaterLeft",
-            "#floaterRight",
             "#featureGrid .feature-card",
           ],
           { clearProps: "all" }
@@ -40,8 +38,6 @@ export function useHeroTimeline(root: RefObject<HTMLElement | null>) {
         opacity: 0,
       });
       gsap.set("#dashWrap", { y: 35, opacity: 0, scale: 0.98 });
-      gsap.set("#floaterLeft", { x: -25, opacity: 0, scale: 0.92 });
-      gsap.set("#floaterRight", { x: 25, opacity: 0, scale: 0.92 });
       gsap.set("#featureGrid .feature-card", { y: 20, opacity: 0 });
 
       // Orchestrated Entrance Sequence
@@ -63,16 +59,6 @@ export function useHeroTimeline(root: RefObject<HTMLElement | null>) {
           "#dashWrap",
           { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: "power3.out" },
           0.62
-        )
-        .to(
-          "#floaterLeft",
-          { x: 0, opacity: 1, scale: 1, duration: 0.65, ease: "back.out(1.4)" },
-          0.9
-        )
-        .to(
-          "#floaterRight",
-          { x: 0, opacity: 1, scale: 1, duration: 0.65, ease: "back.out(1.4)" },
-          0.98
         )
         .to(
           "#featureGrid .feature-card",
