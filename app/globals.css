@@ -316,8 +316,8 @@ h1 {
   font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144;
   color: var(--ink);
   font-size: clamp(40px, 6.8vw, 82px);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  line-height: 1.18;
+  letter-spacing: -0.018em;
   margin: 0;
   overflow: visible;
 }
@@ -325,20 +325,23 @@ h1 {
 .line {
   display: block;
   overflow: visible;
-  line-height: 1.12;
-  padding-bottom: 0.22em;
+  line-height: 1.18;
+  padding: 0.04em 0.25em 0.3em;
+  margin-bottom: -0.16em;
 }
 
 .line > span {
-  display: block;
+  display: inline-block;
+  overflow: visible;
+  padding-right: 0.18em;
+  padding-bottom: 0.15em;
+  margin-right: -0.18em;
+  margin-bottom: -0.15em;
   will-change: transform;
 }
 
 .line--accent {
-  background: linear-gradient(135deg, #101f19 20%, #c98a2e 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--green-deep);
 }
 
 /* Subtitle */

@@ -18,11 +18,14 @@ export function useHeroTimeline(root: RefObject<HTMLElement | null>) {
         gsap.set(
           [
             ".nav",
+            "h1 .line",
             "h1 .line > span",
             ".sub",
             ".actions",
             ".hero__perks",
             "#dashWrap",
+            "#floaterLeft",
+            "#floaterRight",
             "#featureGrid .feature-card",
           ],
           { clearProps: "all" }
@@ -30,14 +33,16 @@ export function useHeroTimeline(root: RefObject<HTMLElement | null>) {
         return;
       }
 
-      // Initial hidden states
+      // Initial hidden states (using smooth opacity + translateY so overflow stays visible)
       gsap.set(".nav", { y: -20, opacity: 0 });
-      gsap.set("h1 .line > span", { yPercent: 110 });
+      gsap.set("h1 .line > span", { y: 26, opacity: 0 });
       gsap.set([".sub", ".actions", ".hero__perks"], {
         y: 18,
         opacity: 0,
       });
       gsap.set("#dashWrap", { y: 35, opacity: 0, scale: 0.98 });
+      gsap.set("#floaterLeft", { x: -25, opacity: 0, scale: 0.92 });
+      gsap.set("#floaterRight", { x: 25, opacity: 0, scale: 0.92 });
       gsap.set("#featureGrid .feature-card", { y: 20, opacity: 0 });
 
       // Orchestrated Entrance Sequence
@@ -49,7 +54,7 @@ export function useHeroTimeline(root: RefObject<HTMLElement | null>) {
       tl.to(".nav", { y: 0, opacity: 1, duration: 0.6 }, 0)
         .to(
           "h1 .line > span",
-          { yPercent: 0, duration: 0.85, stagger: 0.08, ease: "power4.out" },
+          { y: 0, opacity: 1, duration: 0.85, stagger: 0.1, ease: "power3.out" },
           0.12
         )
         .to(".sub", { y: 0, opacity: 1, duration: 0.55 }, 0.38)
@@ -59,6 +64,16 @@ export function useHeroTimeline(root: RefObject<HTMLElement | null>) {
           "#dashWrap",
           { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: "power3.out" },
           0.62
+        )
+        .to(
+          "#floaterLeft",
+          { x: 0, opacity: 1, scale: 1, duration: 0.65, ease: "back.out(1.4)" },
+          0.9
+        )
+        .to(
+          "#floaterRight",
+          { x: 0, opacity: 1, scale: 1, duration: 0.65, ease: "back.out(1.4)" },
+          0.98
         )
         .to(
           "#featureGrid .feature-card",
