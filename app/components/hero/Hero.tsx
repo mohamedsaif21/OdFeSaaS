@@ -143,33 +143,7 @@ export default function Hero() {
 
       {/* Stage Container */}
       <div className="stage">
-        {/* Floating Contextual Badges */}
-        <div className="floater floater--left" id="floaterLeft">
-          <div className="floater__badge-dot" />
-          <div className="floater__icon">⚡</div>
-          <div className="floater__body">
-            <div className="floater__title">New Order · Table 4</div>
-            <div className="floater__sub">2× Flat White, 1× Butter Croissant</div>
-            <div className="floater__meta">
-              <span className="floater__tag">KOT Dispatched</span>
-              <span className="floater__price">₹460 · UPI</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="floater floater--right" id="floaterRight">
-          <div className="floater__icon floater__icon--amber">☕</div>
-          <div className="floater__body">
-            <div className="floater__title">Auto Recipe Inventory</div>
-            <div className="floater__sub">Arabica: -36g · Oatly: -400ml</div>
-            <div className="floater__meta">
-              <span className="floater__tag floater__tag--green">142 Cups Left</span>
-              <span className="floater__status">Synced</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Standalone Dashboard UI (without dark green container) */}
+        {/* Standalone Dashboard UI */}
         <div className="dashboard-wrap" id="dashWrap">
           <HeroDashboard />
         </div>
