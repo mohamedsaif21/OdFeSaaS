@@ -2,6 +2,7 @@ import Hero from "./components/hero/Hero";
 import ProblemSection from "./components/problem/ProblemSection";
 import WorkflowSection from "./components/workflow/WorkflowSection";
 import CapabilitiesSection from "./components/capabilities/CapabilitiesSection";
+import RolesSection from "./components/roles/RolesSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <ProblemSection />
       <WorkflowSection />
       <CapabilitiesSection />
+      <RolesSection />
     </main>
   );
 }
