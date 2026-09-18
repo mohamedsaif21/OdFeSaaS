@@ -1,7 +1,7 @@
 import Hero from "./components/hero/Hero";
 import ProblemSection from "./components/problem/ProblemSection";
 import WorkflowSection from "./components/workflow/WorkflowSection";
-import PosShowcase from "./components/pos/PosShowcase";
+import CapabilitiesSection from "./components/capabilities/CapabilitiesSection";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <WorkflowSection />
-      <PosShowcase />
+      <CapabilitiesSection />
     </main>
   );
 }
