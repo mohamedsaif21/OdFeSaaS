@@ -6068,3 +6068,522 @@ h1 {
     margin-bottom: 40px;
   }
 }
+
+/* ==========================================================================
+   HOW ODFE WORKS SECTION (VERTICAL TIMELINE)
+   ========================================================================== */
+.how-section {
+  position: relative;
+  padding: 108px 24px;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.how-wash {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(75% 55% at 50% 30%, rgba(20, 80, 62, 0.05), transparent 70%),
+    radial-gradient(65% 45% at 85% 75%, rgba(201, 138, 46, 0.05), transparent 70%),
+    linear-gradient(180deg, var(--paper) 0%, #FAF9F5 50%, var(--paper) 100%);
+}
+
+.how-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.how-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 60px;
+}
+
+.how-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--green-deep);
+  background: var(--brass-light);
+  border: 1px solid rgba(201, 138, 46, 0.3);
+  padding: 5px 14px;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(201, 138, 46, 0.08);
+  text-transform: uppercase;
+}
+
+.how-eyebrow__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--brass);
+}
+
+.how-title {
+  font-family: var(--display);
+  font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144;
+  font-weight: 600;
+  font-size: clamp(34px, 4.8vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  margin: 20px 0 0;
+}
+
+.how-title__accent {
+  color: var(--green-deep);
+}
+
+.how-sub {
+  margin: 18px auto 0;
+  max-width: 60ch;
+  color: var(--ink-soft);
+  font-size: clamp(15.5px, 1.4vw, 17.5px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.how-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--green-deep);
+  background: #f0f7f3;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 80, 62, 0.15);
+  margin-top: 20px;
+}
+
+.how-summary__dot {
+  color: var(--brass);
+  font-weight: 800;
+}
+
+/* Vertical Timeline Structure */
+.how-timeline {
+  position: relative;
+  margin-bottom: 64px;
+  padding: 20px 0;
+}
+
+.how-line-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.how-line-track {
+  width: 100%;
+  height: 100%;
+  background: var(--line);
+}
+
+.how-line-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--green-deep);
+}
+
+.how-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Step Item Layout */
+.how-step-item {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.how-step-item--left {
+  justify-content: flex-start;
+  padding-right: 54%;
+}
+
+.how-step-item--right {
+  justify-content: flex-end;
+  padding-left: 54%;
+}
+
+/* Node attached to central line */
+.how-step-node {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid var(--green-deep);
+  display: grid;
+  place-items: center;
+  z-index: 3;
+  box-shadow: 0 0 0 4px var(--paper);
+}
+
+.how-step-node__inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--green-deep);
+}
+
+/* Step Card Styling */
+.how-step-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 18px rgba(16, 31, 25, 0.025);
+  transition: transform 0.28s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.28s cubic-bezier(0.2, 0, 0, 1), border-color 0.28s ease;
+  width: 100%;
+}
+
+.how-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -8px rgba(16, 31, 25, 0.09);
+  border-color: rgba(20, 80, 62, 0.3);
+}
+
+.how-step-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.how-step-card__num {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--brass);
+  letter-spacing: 0.08em;
+  background: var(--brass-light);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 138, 46, 0.25);
+}
+
+.how-step-card__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #f0f7f3;
+  border: 1px solid rgba(20, 80, 62, 0.15);
+  color: var(--green-deep);
+  display: grid;
+  place-items: center;
+}
+
+.how-step-card__title {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 4px 0 0;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.how-step-card__desc {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.how-step-card__visual {
+  margin-top: 4px;
+}
+
+/* Micro UI Fragments */
+.how-micro-fragment {
+  background: #faf8f4;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.22s ease, transform 0.22s ease;
+}
+
+.how-step-card:hover .how-micro-fragment {
+  border-color: rgba(20, 80, 62, 0.22);
+  transform: translateY(-2px);
+}
+
+/* Step 01 Micro Fragment */
+.how-micro-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.how-micro-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.how-micro-qty {
+  font-weight: 700;
+  color: var(--green-deep);
+  background: #e6f3ec;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 10.5px;
+}
+
+.how-micro-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line-soft);
+}
+
+.how-micro-total-label {
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.how-micro-total-val {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+/* Step 02 Micro Fragment */
+.how-micro-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.how-flow-pill {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+.how-flow-pill--active {
+  color: var(--green-deep);
+  background: #e6f3ec;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.how-flow-arrow {
+  font-size: 10px;
+  color: var(--brass);
+  font-weight: 800;
+}
+
+/* Step 03 Micro Fragment */
+.how-stock-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+}
+
+.how-stock-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.how-stock-val {
+  color: var(--ink-soft);
+  font-size: 11px;
+}
+
+.how-stock-badge {
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.how-stock-badge--healthy {
+  color: var(--green-deep);
+  background: #e6f3ec;
+}
+
+.how-stock-badge--low {
+  color: #c0703a;
+  background: var(--brass-light);
+  border: 1px solid rgba(201, 138, 46, 0.25);
+}
+
+/* Step 04 Micro Fragment */
+.how-visit-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.how-visit-step {
+  color: var(--ink-soft);
+}
+
+.how-visit-step--reward {
+  color: #8a6410;
+  background: var(--brass-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 138, 46, 0.25);
+}
+
+.how-visit-arrow {
+  color: var(--brass);
+  font-weight: 800;
+}
+
+/* Step 05 Micro Fragment */
+.how-trend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.how-trend-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.how-trend-badge {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--green-deep);
+  background: #e6f3ec;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.how-trend-svg {
+  width: 100%;
+  height: 36px;
+}
+
+.how-trend-days {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* Section Closing */
+.how-closing {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto;
+  padding-top: 44px;
+  border-top: 1px dashed var(--line-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.how-closing__title {
+  font-family: var(--display);
+  font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.how-closing__accent {
+  color: var(--green-deep);
+}
+
+.how-closing__desc {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+  font-weight: 400;
+}
+
+.how-closing__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-deep);
+  transition: gap 0.2s ease, color 0.2s ease;
+  margin-top: 4px;
+}
+
+.how-closing__link:hover {
+  gap: 10px;
+  color: var(--green);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .how-section {
+    padding: 72px 16px;
+  }
+  .how-line-container {
+    left: 20px;
+    transform: none;
+  }
+  .how-step-node {
+    left: 20px;
+    transform: translateY(-50%);
+  }
+  .how-step-item--left,
+  .how-step-item--right {
+    padding-left: 48px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  .how-summary {
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 12px;
+  }
+  .how-summary__dot {
+    display: none;
+  }
+}
